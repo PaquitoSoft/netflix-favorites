@@ -47,15 +47,17 @@ const FavoriteToggle: React.FC<FavoriteToggleProps> = (props) => {
 			</div>
 		);
 	} else {
-		<div
-			className="Buton FavoriteToggleFull"
-			onClick={toggle}
-			data-primary={false}
-			data-toggled={`${!!favorites?.[user.userId]?.[props.movieId]}`}
-		>
-			{icons}
-			Add to favorites
-		</div>
+		return (
+			<div
+				className="Buton FavoriteToggleFull"
+				onClick={toggle}
+				data-primary={false}
+				data-toggled={`${!!favorites?.[user.userId]?.[props.movieId]}`}
+			>
+				{icons}
+				Add to favorites
+			</div>
+		);
 	}
 };
 
