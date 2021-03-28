@@ -22,7 +22,7 @@ const FavoriteToggle: React.FC<FavoriteToggleProps> = (props) => {
 		if (user.userId in favs && props.movieId in favs[user.userId]) {
 			delete favs[user.userId][props.movieId];
 		} else {
-			favs[user.userId] = favs?.userId ?? {};
+			favs[user.userId] = favs?.[user.userId] ?? {};
 			favs[user.userId][props.movieId] = props.media_type;
 		}
 
