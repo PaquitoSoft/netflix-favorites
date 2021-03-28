@@ -15,14 +15,14 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
 	if (!user) return <NoUser />;
 	if (!userHasFavorites(favorites, user)) return <NoFavs />;
 
-	const tiles = Object.entries(favorites[user.userId]).map(([userId, mediaType]) => {
+	const tiles = Object.entries(favorites[user.userId]).map(([userId, mediaType]) => (
 		<Favorite
 			key={userId}
 			id={userId}
 			media_type={mediaType}
 			MovieTile={props.MovieTile}
 		/>
-	});
+	));
 
 	return (
 		<div className="Favorites">{tiles}</div>
